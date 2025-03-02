@@ -1,81 +1,133 @@
-<div align="center">
+# Formula One Minimal API
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+This project is a minimal API built with [Fastify](https://www.fastify.io/) that provides information about Formula 1 drivers and teams. It is designed to be lightweight, fast, and easy to extend.
 
-</div>
+## Table of Contents
 
-<br />
+- [Technologies Used](#technologies-used)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+## Technologies Used
 
-</div>
+This project uses the following technologies:
 
-# 🚀 Technologies
+- [Fastify](https://www.fastify.io/) - A fast web framework for Node.js.
+- [TypeScript](https://www.typescriptlang.org/) - A superset of JavaScript that adds type safety.
+- [CORS](https://www.npmjs.com/package/@fastify/cors) - Middleware to enable Cross-Origin Resource Sharing (CORS) for the API.
+- [TSX](https://github.com/esbuild/tsx) - A runtime for executing TypeScript directly.
+- [Tsup](https://github.com/egoist/tsup) - A TypeScript bundler that is optimized for fast performance.
 
-This code source was developed with the following items:
+## Features
 
-### 📦 Dependencies
+- List all Formula 1 teams and their details.
+- Get a list of all Formula 1 drivers.
+- Retrieve information about a specific driver by their ID.
 
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
+## Installation
 
-### 📄 Files
+To get started with this project, follow these steps:
 
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
+1. Clone the repository:
 
-### ⚡ Scripts
+    ```bash
+    git clone https://github.com/your-username/formula-one-api.git
+    cd formula-one-api
+    ```
 
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
+2. Install dependencies:
 
-# 👨‍💻 How To Use
+    ```bash
+    npm install
+    ```
 
-click in **[Use this template]** OR
+## Usage
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
+To run the development server, use the following command:
 
 ```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+npm run start:dev
 ```
 
-## Author
+The server will be running on [http://localhost:3333](http://localhost:3333).
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+For production builds, use:
 
-# Credits
+```bash
+npm run start:dist
+```
 
-icons by [Pino Lamanna][dribble-icon]
+## API Endpoints
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+### `GET /teams`
+
+Returns a list of all Formula 1 teams with their details.
+
+**Response Example:**
+
+```json
+[
+  {
+    "nome": "Mercedes",
+    "país": "Alemanha",
+    "fundação": 1954
+  },
+  {
+    "nome": "Red Bull Racing",
+    "país": "Áustria",
+    "fundação": 2005
+  },
+  ...
+]
+```
+
+### `GET /drivers`
+
+Returns a list of all Formula 1 drivers with their details.
+
+**Response Example:**
+
+```json
+[
+  {
+    "id": 1,
+    "nome": "Lewis Hamilton",
+    "nacionalidade": "Britânico",
+    "time": "Mercedes"
+  },
+  {
+    "id": 2,
+    "nome": "Max Verstappen",
+    "nacionalidade": "Neerlandês",
+    "time": "Red Bull Racing"
+  },
+  ...
+]
+```
+
+### `GET /drivers/:id`
+
+Returns information about a specific driver based on their ID.
+
+**Response Example:**
+
+```json
+{
+  "driver": {
+    "id": 1,
+    "nome": "Lewis Hamilton",
+    "nacionalidade": "Britânico",
+    "time": "Mercedes"
+  }
+}
+```
+
+If the driver is not found, the response will be:
+
+```json
+{
+  "message": "Driver not found!"
+}
+```
