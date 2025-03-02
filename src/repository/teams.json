@@ -1,0 +1,42 @@
+ [
+    {
+      "nome": "Mercedes",
+      "país": "Alemanha",
+      "fundação": 1954
+    },
+    {
+      "nome": "Red Bull Racing",
+      "país": "Áustria",
+      "fundação": 2005
+    },
+    {
+      "nome": "Ferrari",
+      "país": "Itália",
+      "fundação": 1929
+    },
+    {
+      "nome": "Aston Martin",
+      "país": "Reino Unido",
+      "fundação": 2009
+    },
+    {
+      "nome": "Alpine",
+      "país": "França",
+      "fundação": 2021
+    },
+    {
+      "nome": "McLaren",
+      "país": "Reino Unido",
+      "fundação": 1963
+    },
+    {
+      "nome": "Alfa Romeo",
+      "país": "Suíça",
+      "fundação": 2019
+    },
+    {
+      "nome": "AlphaTauri",
+      "país": "Áustria",
+      "fundação": 2006
+    }
+  ]

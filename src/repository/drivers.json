@@ -1,0 +1,42 @@
+[
+    {
+      "nome": "Lewis Hamilton",
+      "nacionalidade": "Britânico",
+      "time": "Mercedes"
+    },
+    {
+      "nome": "Max Verstappen",
+      "nacionalidade": "Neerlandês",
+      "time": "Red Bull Racing"
+    },
+    {
+      "nome": "Charles Leclerc",
+      "nacionalidade": "Monegasco",
+      "time": "Ferrari"
+    },
+    {
+      "nome": "Sebastian Vettel",
+      "nacionalidade": "Alemão",
+      "time": "Aston Martin"
+    },
+    {
+      "nome": "Fernando Alonso",
+      "nacionalidade": "Espanhol",
+      "time": "Aston Martin"
+    },
+    {
+      "nome": "Sergio Pérez",
+      "nacionalidade": "Mexicano",
+      "time": "Red Bull Racing"
+    },
+    {
+      "nome": "Daniel Ricciardo",
+      "nacionalidade": "Australiano",
+      "time": "AlphaTauri"
+    },
+    {
+      "nome": "Valtteri Bottas",
+      "nacionalidade": "Finlandês",
+      "time": "Alfa Romeo"
+    }
+  ]
